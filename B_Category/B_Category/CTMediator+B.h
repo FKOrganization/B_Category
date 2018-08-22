@@ -8,8 +8,9 @@
 
 #import "CTMediator.h"
 
+
 @interface CTMediator (B)
 
-- (UIViewController *)B_viewControllerWithContentText:(NSString *)contentText;
+- (UIViewController *)B_viewControllerWithContentText:(NSString *)contentText andSelf:(id)wself block:(void(^)(void))block;
 
 @end

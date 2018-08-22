@@ -10,13 +10,16 @@
 
 @implementation CTMediator (B)
 
-- (UIViewController *)B_viewControllerWithContentText:(NSString *)contentText
+- (UIViewController *)B_viewControllerWithContentText:(NSString *)contentText andSelf:(id)wself block:(void(^)(void))block;
 {
     /*
      BViewController *viewController = [[BViewController alloc] initWithContentText:@"hello, world!"];
      */
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     params[@"contentText"] = contentText;
+    params[@"self"] = wself;
+    params[@"block"] = block;
+
     return [self performTarget:@"B" action:@"viewController" params:params shouldCacheTarget:NO];
 }
 
